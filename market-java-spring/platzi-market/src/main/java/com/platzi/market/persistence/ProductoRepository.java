@@ -13,7 +13,6 @@ import java.util.Optional;
 
 @Repository
 public class ProductoRepository implements ProductRepository {
-
     @Autowired
     private ProductoCrudRepository productoCrudRepository;
 
@@ -53,5 +52,4 @@ public class ProductoRepository implements ProductRepository {
     public void delete(int productId) {
         productoCrudRepository.deleteById(productId);
     }
-
 }

@@ -3,7 +3,7 @@ package com.platzi.market.persistence.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name ="productos")
+@Table(name = "productos")
 public class Producto {
 
     @Id
@@ -28,7 +28,7 @@ public class Producto {
     private Boolean estado;
 
     @ManyToOne
-    @JoinColumn(name="id_categoria",insertable = false,updatable = false)
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
 
     public Integer getIdProducto() {

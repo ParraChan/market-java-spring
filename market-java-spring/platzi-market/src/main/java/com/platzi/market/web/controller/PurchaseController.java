@@ -12,7 +12,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/purchases")
 public class PurchaseController {
-
     @Autowired
     private PurchaseService purchaseService;
 
@@ -20,6 +19,7 @@ public class PurchaseController {
     public ResponseEntity<List<Purchase>> getAll() {
         return new ResponseEntity<>(purchaseService.getAll(), HttpStatus.OK);
     }
+
     @GetMapping("/client/{idClient}")
     public ResponseEntity<List<Purchase>> getByClient(@PathVariable("idClient") String clientId) {
         return purchaseService.getByClient(clientId).map(
@@ -32,3 +32,4 @@ public class PurchaseController {
         return new ResponseEntity<>(purchaseService.save(purchase), HttpStatus.CREATED);
     }
 }
+
